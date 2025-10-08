@@ -28,8 +28,8 @@ FROM eclipse-temurin:21-jre-alpine
 # Set the working directory
 WORKDIR /app
 
-# Create a non-root user for security
-RUN useradd --create-home --shell /bin/bash app
+# Create a non-root user for security (Alpine Linux syntax)
+RUN adduser -D -s /bin/sh app
 
 # Copy the built JAR from the build stage
 COPY --from=build /app/target/*.jar app.jar
