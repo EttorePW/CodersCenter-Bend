@@ -1,0 +1,30 @@
+﻿firstName;lastName;email;phone;birthDate;svn;salary;address.street;address.city;address.zip;address.country;subjects
+Kristin;Peterson;kristin.peterson@example.com;(945)214-4496x52575;1998-05-25;SVN84961;4852.53;0296 Bailey Ridges Apt. 073;Julietown;30266;Timor-Leste;3,1
+Thomas;Miller;thomas.miller@example.com;(430)625-4791x55080;1993-11-07;SVN62550;2068.08;7389 Matthew Ford;Garzafort;14947;Kenya;1
+Andrew;Williams;andrew.williams@example.com;+1-744-805-2282x0098;1995-09-19;SVN54342;4777.26;950 Melody Grove;Smithstad;19666;South Georgia and the South Sandwich Islands;4
+Tony;Garcia;tony.garcia@example.com;+1-099-366-8148x456;1989-08-29;SVN17435;4715.84;29500 Elizabeth Gateway Suite 417;Lake Michaelview;87845;Vanuatu;3,5
+Melissa;Russell;melissa.russell@example.com;484-959-2062;2000-05-15;SVN56181;4520.36;712 Dickerson Land;East Brenda;11296;Turks and Caicos Islands;4,3
+Kevin;Johnson;kevin.johnson@example.com;702-555-1298;1991-02-10;SVN45321;3890.77;9811 Cedar Fork;New Jason;41092;Germany;2
+Laura;Hernandez;laura.hernandez@example.com;+49-172-8876543;1987-12-04;SVN83652;5342.41;75 Maple Street;Berlin;10115;Germany;1,5
+David;Brown;dbrown@example.org;+1-303-555-7788;1996-08-21;SVN29876;3120.62;456 Elm Avenue;Denver;80205;United States;2,3
+Sophia;Martinez;sophia.martinez@example.com;(305)777-9911;1999-04-03;SVN67411;4988.15;789 Ocean Drive;Miami;33101;United States;4
+Michael;Clark;mclark@example.net;+44-7700-900123;1984-09-30;SVN19234;4275.88;12 High Street;London;SW1A1AA;United Kingdom;3
+Julia;Schmidt;julia.schmidt@example.de;0176-99887766;1992-07-15;SVN54389;3650.20;Hauptstr. 45;München;80331;Germany;1
+Carlos;Lopez;carlos.lopez@example.es;+34-600-123-456;1988-11-27;SVN76543;4150.95;Calle Mayor 12;Madrid;28013;Spain;2,4
+Anna;Kowalski;anna.kowalski@example.pl;+48-501-234-567;1995-06-08;SVN83219;3925.11;ul. Krakowska 8;Warszawa;00-001;Poland;1,3
+Markus;Meier;markus.meier@example.ch;+41-79-123-45-67;1990-03-12;SVN98231;4780.54;Bahnhofstrasse 22;Zürich;8001;Switzerland;2,5
+Emma;Dubois;emma.dubois@example.fr;+33-6-12-34-56-78;1997-01-19;SVN12387;3590.66;15 Rue de Rivoli;Paris;75001;France;4
+Luca;Bianchi;luca.bianchi@example.it;+39-333-444-5555;1986-05-22;SVN78321;5020.33;Via Roma 77;Milano;20100;Italy;3,5
+Isabella;Rossi;isabella.rossi@example.it;+39-347-666-7777;1993-10-09;SVN33478;3720.80;Corso Venezia 21;Torino;10121;Italy;1,2
+Noah;Andersen;noah.andersen@example.dk;+45-50-123-456;1994-02-28;SVN72195;4855.24;Østerbrogade 5;København;2100;Denmark;2,3
+Chloe;Nguyen;chloe.nguyen@example.com;+61-412-345-678;1989-06-14;SVN91234;4440.59;22 George Street;Sydney;2000;Australia;5
+Oliver;Wilson;oliver.wilson@example.co.uk;+44-7400-123456;1998-11-01;SVN61872;3999.43;8 Baker Street;Manchester;M11AA;United Kingdom;3,4
+Hiroshi;Tanaka;hiroshi.tanaka@example.jp;+81-90-1234-5678;1985-07-25;SVN45632;4895.72;1-2-3 Shibuya;Tokyo;1500002;Japan;2,5
+Maria;Silva;maria.silva@example.com;+55-21-91234-5678;1997-09-11;SVN72891;3520.30;Rua das Flores 99;Rio de Janeiro;20000-000;Brazil;1
+Ahmed;Hassan;ahmed.hassan@example.com;+20-100-123-4567;1992-04-17;SVN88912;4710.65;15 Nile Street;Cairo;11511;Egypt;4,5
+Fatima;Ali;fatima.ali@example.com;+971-50-123-4567;1990-12-06;SVN11223;3685.39;22 Sheikh Zayed Rd;Dubai;00000;United Arab Emirates;3
+Ethan;Walker;ethan.walker@example.com;+1-213-555-0199;1988-01-30;SVN99871;5140.25;123 Sunset Blvd;Los Angeles;90001;United States;1,2
+Natalie;Fischer;natalie.fischer@example.de;0151-23456789;1996-03-07;SVN43129;3860.77;Berliner Allee 33;Düsseldorf;40210;Germany;4
+Samuel;Johnson;samuel.johnson@example.com;+1-646-555-0190;1991-08-18;SVN77451;4675.82;456 Broadway;New York;10012;United States;2,3
+Elena;Ivanova;elena.ivanova@example.ru;+7-916-123-4567;1987-11-29;SVN59218;3780.91;Prospekt Mira 15;Moscow;101000;Russia;5
+Paul;Novak;paul.novak@example.cz;+420-602-123-456;1994-05-23;SVN86214;4530.37;Karlova 9;Praha;11000;Czech Republic;3,4

@@ -1,0 +1,11 @@
+firstName,lastName,email,phone,birthDate,svn,salary,address.street,address.city,address.zip,subjects
+Kristin,Peterson,kristin.peterson@example.com,+43123456789,1998-05-25,1234567890,4852.53,0296 Bailey Ridges Apt. 073,Julletown,3066,"3,1"
+Thomas,Miller,thomas.miller@example.com,+43111222333,1993-11-07,0987654321,2068.08,7389 Matthew Ford,Garzafort,1447,1
+Andrew,Williams,andrew.williams@example.com,+447440522898,1995-09-19,1111222233,4777.26,950 Melody Grove,Smithstad,1966,4
+Tony,Garcia,tony.garcia@example.com,+431234888999,1989-08-29,4444555566,4715.84,29500 Elizabeth Gateway Suite 417,Lake Michaelview,8845,"3,5"
+Melissa,Russell,melissa.russell@example.com,+431234556677,2000-05-15,7777888899,4520.36,712 Dickerson Land,East Brenda,1126,"4,3"
+Denise,Nelson,denise.nelson@example.com,+12026348701,1978-06-04,2222333344,3177.57,1370 Teresa Villages Suite 107,Zhangville,2810,2
+Adrian,White,adrian.white@example.com,+43111222344,1984-08-15,5555666677,3436.35,8030 Maria Course Suite 371,South Joshua,2704,"1,2"
+Mary,Murphy,mary.murphy@example.com,+431234667788,1984-09-13,6666777788,3953.55,769 Perry Villages,Coffeyview,1811,"4,2"
+Hunter,Mccormick,hunter.mccormick@example.com,+431234556688,2000-11-06,9999000011,2330.07,5087 Jessica Meadows Suite 042,East Chelsea,3102,"5,4"
+Teresa,Lee,teresa.lee@example.com,+431234445566,1990-03-21,3333444455,2363.4,9698 Martinez Hills Apt. 381,Matthewchesterr,3158,2
