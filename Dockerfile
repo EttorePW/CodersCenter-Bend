@@ -7,26 +7,24 @@ WORKDIR /app
 
 # Copy pom.xml first to leverage Docker layer caching
 COPY pom.xml .
-COPY mvnw .
-COPY mvnw.cmd .
-
-# Make mvnw executable
-RUN chmod +x mvnw
 
 # Download dependencies (this layer will be cached if pom.xml doesn't change)
-RUN ./mvnw dependency:go-offline -B
+RUN mvn dependency:go-offline -B
 
 # Copy source code
 COPY src ./src
 
 # Build the application
-RUN ./mvnw clean package -DskipTests -B
+RUN mvn clean package -DskipTests -B
 
 # Stage 2: Create the runtime image
 FROM eclipse-temurin:21-jre-alpine
 
 # Set the working directory
 WORKDIR /app
+
+# Install curl for health check (Alpine Linux) - must be before USER switch
+RUN apk add --no-cache curl
 
 # Create a non-root user for security (Alpine Linux syntax)
 RUN adduser -D -s /bin/sh app
@@ -43,9 +41,6 @@ USER app
 
 # Expose the port that the application runs on
 EXPOSE 8080
-
-# Install curl for health check (Alpine Linux)
-RUN apk add --no-cache curl
 
 # Add health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
