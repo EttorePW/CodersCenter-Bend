@@ -21,8 +21,10 @@ public class EmailRespondGenerator {
                     <p>Danke für deine Registrierung bei <strong>Coders Center APP</strong>.</p>
                 </div>
                 <hr/>
-                <p>Bitte ändere deine Daten.</p>
-                <button><a href="http://localhost:5173">Hier</a></button>
+                <p>Bitte ändere dein Passwort nach dem ersten Login.</p>
+                <div style="text-align: center; margin: 20px 0;">
+                    <a href="https://dein-frontend.com/login" style="background-color: #4CAF50; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block;">Zum Login</a>
+                </div>
                 <p><strong>Name:</strong> %s</p>
                 <p><strong>Email:</strong> %s</p>
                 <p><strong>Passwort:</strong> %s</p>

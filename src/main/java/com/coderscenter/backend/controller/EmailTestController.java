@@ -1,6 +1,7 @@
 package com.coderscenter.backend.controller;
 
-import com.coderscenter.backend.services.ResendEmailService;
+import com.coderscenter.backend.services.helperService.EmailSendingService;
+import com.coderscenter.backend.components.EmailRespondGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,10 @@ import java.util.Map;
 public class EmailTestController {
 
     @Autowired
-    private ResendEmailService resendEmailService;
+    private EmailSendingService emailSendingService;
+    
+    @Autowired
+    private EmailRespondGenerator emailRespondGenerator;
 
     /**
      * Test simple email sending
@@ -33,7 +37,7 @@ public class EmailTestController {
         Map<String, Object> response = new HashMap<>();
         
         try {
-            boolean success = resendEmailService.sendEmail(to, subject, content);
+            boolean success = emailSendingService.sendEmailSync(to, subject, content);
             
             if (success) {
                 response.put("status", "success");
@@ -69,7 +73,13 @@ public class EmailTestController {
         Map<String, Object> response = new HashMap<>();
         
         try {
-            boolean success = resendEmailService.sendWelcomeEmail(to, userName, password);
+            // Create a dummy user for email template
+            com.coderscenter.backend.entities.profile.User dummyUser = new com.coderscenter.backend.entities.profile.User();
+            dummyUser.setUsername(userName);
+            dummyUser.setEmail(to);
+            
+            String emailBody = emailRespondGenerator.respondTextGenerator(dummyUser, password);
+            boolean success = emailSendingService.sendEmailSync(to, "Willkommen bei CodersCenter!", emailBody);
             
             if (success) {
                 response.put("status", "success");
@@ -91,40 +101,6 @@ public class EmailTestController {
         }
     }
 
-    /**
-     * Test password reset email
-     * GET /api/email/test/password-reset?to=test@example.com&userName=John&newPassword=new123
-     */
-    @GetMapping("/password-reset")
-    public ResponseEntity<Map<String, Object>> testPasswordResetEmail(
-            @RequestParam String to,
-            @RequestParam String userName,
-            @RequestParam String newPassword) {
-        
-        Map<String, Object> response = new HashMap<>();
-        
-        try {
-            boolean success = resendEmailService.sendPasswordResetEmail(to, userName, newPassword);
-            
-            if (success) {
-                response.put("status", "success");
-                response.put("message", "Password reset email sent successfully");
-                response.put("to", to);
-                response.put("userName", userName);
-                return ResponseEntity.ok(response);
-            } else {
-                response.put("status", "error");
-                response.put("message", "Failed to send password reset email");
-                return ResponseEntity.badRequest().body(response);
-            }
-            
-        } catch (Exception e) {
-            log.error("Error testing password reset email: {}", e.getMessage(), e);
-            response.put("status", "error");
-            response.put("message", "Exception occurred: " + e.getMessage());
-            return ResponseEntity.internalServerError().body(response);
-        }
-    }
 
     /**
      * Check email service configuration
@@ -135,9 +111,14 @@ public class EmailTestController {
         Map<String, Object> response = new HashMap<>();
         
         // Note: We don't expose the actual API key for security
-        response.put("resendConfigured", resendEmailService != null);
-        response.put("message", "Email service configuration check");
-        response.put("note", "Use /simple endpoint to test actual email sending");
+        response.put("emailServiceConfigured", emailSendingService != null);
+        response.put("message", "Email service configuration check - Using Resend API");
+        response.put("note", "Use /simple or /welcome endpoint to test actual email sending");
+        response.put("availableEndpoints", new String[]{
+            "/api/email/test/simple",
+            "/api/email/test/welcome",
+            "/api/email/test/config"
+        });
         
         return ResponseEntity.ok(response);
     }
