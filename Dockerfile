@@ -9,16 +9,18 @@ WORKDIR /app
 COPY pom.xml .
 COPY mvnw .
 COPY mvnw.cmd .
-COPY .mvn .mvn
+
+# Make mvnw executable
+RUN chmod +x mvnw
 
 # Download dependencies (this layer will be cached if pom.xml doesn't change)
-RUN mvn dependency:go-offline -B
+RUN ./mvnw dependency:go-offline -B
 
 # Copy source code
 COPY src ./src
 
 # Build the application
-RUN mvn clean package -DskipTests -B
+RUN ./mvnw clean package -DskipTests -B
 
 # Stage 2: Create the runtime image
 FROM eclipse-temurin:21-jre-alpine
