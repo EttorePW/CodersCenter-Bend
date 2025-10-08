@@ -1,6 +1,6 @@
 # Multi-stage build for optimized production image
 # Stage 1: Build the application
-FROM maven:3.9.4-openjdk-21-slim AS build
+FROM maven:3.9.9-eclipse-temurin-21-alpine AS build
 
 # Set the working directory
 WORKDIR /app
@@ -21,7 +21,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests -B
 
 # Stage 2: Create the runtime image
-FROM openjdk:21-jre-slim
+FROM eclipse-temurin:21-jre-alpine
 
 # Set the working directory
 WORKDIR /app
@@ -41,6 +41,9 @@ USER app
 
 # Expose the port that the application runs on
 EXPOSE 8080
+
+# Install curl for health check (Alpine Linux)
+RUN apk add --no-cache curl
 
 # Add health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
