@@ -47,6 +47,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/login").permitAll()
                         .requestMatchers("/uploads/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/profileImage/**").permitAll()
+                        // Email Test Endpoints - for testing Resend API integration
+                        .requestMatchers("/api/email/test/**").permitAll()
 
                         .requestMatchers(HttpMethod.POST, "/api/profileImage/**").authenticated()
                         .requestMatchers(HttpMethod.DELETE, "/api/profileImage/**").authenticated()
